@@ -70,7 +70,14 @@ e. age, count, meanAge
 
 
 ###Question 7.8
-
+```{r}
+ZipGeography %>%
+ filter(!(Timezone %in% " ") | is.na(Timezone)) %>%
+ ggplot() +
+  aes(x = State, y = ZIP) +
+  geom_tile(size = 1.2) +
+  theme_minimal()
+```
 
 
 
