@@ -4,19 +4,19 @@ author: "Yuan Chen"
 date: '2022-09-26'
 output: html_document
 ---
-###STAT 184 Homework Exercises
+### STAT 184 Homework Exercises
 
-##Data Computing Chapter 7 
+##  Data Computing Chapter 7 
 
 Yuan chen
 
-##Assign Exercises
+##  Assign Exercises
 
 7.3, 7.5, 7.6(Question 1 only), 7.7, 7.8
 
-###Chapter 7 Exercises
+### Chapter 7 Exercises
 
-##Problem 7.3
+##  Problem 7.3
 
 ```{r}
 library(dcData)
@@ -31,14 +31,14 @@ data("Minneapolis2013", package = "dcData")
 5.Besty Hodeges
 
 
-###Problem 7.5
+### Problem 7.5
 
 1. It group by the table by first and second 
 2. It return the total number of case in the data
 3. It count the total number of first and second
 4. becasue we shuold group by first and then summarize.
 
-###Problem 7.6
+### Problem 7.6
 
 ```{r}
 
@@ -60,7 +60,7 @@ plot(TotalLandArea, Totalpopulation, main = "TotalLandArea vs Totalpopulation",
      xlab = "TotalLandArea", ylab = "Totalpopulation", pch = 1 )
 ```
 
-###Question 7.7
+### Question 7.7
 
 a. sex, count, meanAge
 
@@ -73,7 +73,7 @@ d. age, diagnosis, count, meanAge
 e. age, count, meanAge
 
 
-###Question 7.8
+### Question 7.8
 ```{r}
 ZipGeography %>%
  filter(!(Timezone %in% " ") | is.na(Timezone)) %>%
