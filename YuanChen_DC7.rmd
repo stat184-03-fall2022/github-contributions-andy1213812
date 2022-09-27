@@ -4,27 +4,73 @@ author: "Yuan Chen"
 date: '2022-09-26'
 output: html_document
 ---
+###STAT 184 Homework Exercises
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+##Data Computing Chapter 7 
+Yuan chen
+
+##Assign Exercises
+7.3, 7.5, 7.6(Question 1 only), 7.7, 7.8
+
+###Chapter 7 Exercises
+
+##Problem 7.3
+
+```{r}
+library(dcData)
+library(tidyverse)
+library(mosaic)
+library(esquisse)
+data("Minneapolis2013", package = "dcData")
+```
+1.There are 80101 cases
+2.undervote, Mark Andrew, Bob Fine, Don Samules, undervotes
+4. Bob Fine, Mark Andrew, Betsy Hodges
+5.Besty Hodeges
+
+
+###Problem 7.5
+1. It group by the table by first and second 
+2. It return the total number of case in the data
+3. It count the total number of first and second
+4. becasue we shuold group by first and then summarize.
+
+###Problem 7.6
+```{r}
+
+data('ZipGeography', package = "dcData")
+TotalLandArea <-
+  dcData::ZipGeography %>%
+  group_by(State) %>%
+  summarise(LandArea = n()) %>%
+  arrange(desc(LandArea))
+
+Totalpopulation <-
+  dcData::ZipGeography %>%
+  group_by(State) %>%
+  summarise(Population = n()) %>%
+  arrange(desc(Population))
+
+
+plot(TotalLandArea, Totalpopulation, main = "TotalLandArea vs Totalpopulation",
+     xlab = "TotalLandArea", ylab = "Totalpopulation", pch = 1 )
 ```
 
-## R Markdown
+###Question 7.7
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+a. sex, count, meanAge
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+b. diagnosis, count, meanAge
 
-```{r cars}
-summary(cars)
-```
+c. sex, diagnosis, count, meanAge
 
-## Including Plots
+d. age, diagnosis, count, meanAge
 
-You can also embed plots, for example:
+e. age, count, meanAge
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+###Question 7.8
+
+
+
+
