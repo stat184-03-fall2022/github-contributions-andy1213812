@@ -39,4 +39,3 @@ library(tidyverse)
 ### Problem 6.1
 
 [and so forth...]
-
