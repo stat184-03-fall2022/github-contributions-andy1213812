@@ -1,5 +1,5 @@
 ---
-title: "DC7"
+title: "DC10"
 author: "Yuan Chen"
 date: '2022-10-03'
 output: html_document
@@ -8,3 +8,70 @@ output: html_document
 ### STAT 184 Homework Exercises
 
 ##  Data Computing Chapter 10
+
+Yuan Chen
+
+##  Assign Exercises
+
+10.3-10.6
+
+##  Problem 10.3
+1. nrow() 
+2. str()
+3. 
+```{r}
+install.packages("codebook")
+data('codebook')
+View('codebook')
+```
+4.  library(package)
+5.
+```{r}
+install.packages("presidential")
+library(dcData)
+library(tidyverse)
+data("presidential")
+presidential %>%
+  mutate(duration = end - start) %>%
+  group_by(party) %>%
+  summarise(total = n(),
+            in_power = sum(duration))
+```
+
+##  Problem 10.4
+1. The total count number from smallest to largest
+2. Keeps all the female 
+3. Return all the male
+4. Total count of the babies
+5. Only keeps the name and count 
+
+##  Problem 10.5
+```{r}
+Minneapolis2013 %>%
+  group_by(First = 'Ole Savior')%>%
+  head(3)
+```
+1. 14399
+2.
+ABDUL M RAHAMAN “THE ROCK”	undervote
+ABDUL M RAHAMAN “THE ROCK”	ABDUL M RAHAMAN “THE ROCK”
+ABDUL M RAHAMAN “THE ROCK”	BETSY HODGES
+3.
+Undervote, Mark Andrew, Bob Fine
+
+##  Problem 10.6
+1.The largest are color J at 1.162137 carats
+2.Color E at 114.0752 tables/carat.
+
+
+
+
+
+
+
+
+
+
+
+
+
