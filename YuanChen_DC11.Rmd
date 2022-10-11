@@ -3,3 +3,19 @@ title: "YuanChen_DC11"
 author: "Yuan Chen"
 date: '2022-10-11'
 output: html_document
+---
+### STAT 184 Homework Exercises
+
+##  Data Computing Chapter 11
+
+Yuan Chen
+
+##  Assign Exercises 
+
+11.2, 11.3.3, 11.3.4, 11.3.5 , 11.5.1, 11.5.2 , 11.5.3, 11.5.4
+
+### Chapter 11 Exercises
+
+##  Problem 11.2
+
+It is cannot be combined by copy pasting, This is because there is no column which is common in both the tables. The column 'country' in first table is different from the column 'name' in the second table because in the first table there are 256 rows and in the second table there are 241 rows.
