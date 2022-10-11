@@ -19,15 +19,11 @@ Yuan Chen
 1. nrow() 
 2. str()
 3. 
-```{r}
-install.packages("codebook")
 data('codebook')
 View('codebook')
-```
 4.  library(package)
 5.
 ```{r}
-install.packages("presidential")
 library(dcData)
 library(tidyverse)
 data("presidential")
