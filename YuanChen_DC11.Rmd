@@ -19,3 +19,121 @@ Yuan Chen
 ##  Problem 11.2
 
 It is cannot be combined by copy pasting, This is because there is no column which is common in both the tables. The column 'country' in first table is different from the column 'name' in the second table because in the first table there are 256 rows and in the second table there are 241 rows.
+
+##  Problem 11.3.3
+```{r}
+library(tidyverse)
+library(dcData)
+library(ggplot2)
+```
+
+
+```{r}
+Crowded <- 
+  ZipCombined %>%
+  filter(Population > 50000) 
+
+# esquisser(Crowded)
+
+Crowded %>%
+ filter(!(State %in% "")) %>%
+ ggplot() +
+ aes(x = Longitude, y = Latitude) +
+ geom_point(size = 1L, colour = "#0c4c8a") +
+ theme_minimal()
+```
+
+##  Problem 11.3.4
+
+```{r}
+StateDemographics <- 
+  ZipCombined %>%
+  group_by(State) %>%
+  summarise(stateHomesVacant = sum(Vacanthousingunits, na.rm = TRUE) / sum(Totalhousingunits, na.rm = TRUE), 
+            state65Frac = sum(X65yearsandover, na.rm = TRUE) / sum(Population, na.rm = TRUE), 
+            stateBachDegPlus =  sum(Bachelorsdegreeorhigher, na.rm = TRUE) / sum(Population, na.rm = TRUE))
+```
+
+```{r}
+StateDemographics %>%
+  mUSMap(key = "State", fill = "stateHomesVacant")
+```
+
+
+
+##  Problem 11.3.5
+
+```{r}
+HighPop <- 
+  ZipCombined %>%
+  arrange(desc(Population)) %>%
+  head(10000) %>%
+  transmute(State, ZIP, Latitude, Longitude,
+            frac65plus = X65yearsandover / Population)
+
+ggplot(HighPop) +
+ aes(x = Longitude, y = Latitude, colour = frac65plus) +
+ geom_point(size = 1L) +
+ scale_color_gradient() +
+ theme_minimal()
+```
+
+
+
+##  Problem 11.5.1
+```{r}
+ ZipGeography %>%
+  summarise(TotalCounties = n_distinct(County))
+```
+
+##  Problem 11.5.2
+```{r}
+StateFreqByCity <-  
+  ZipGeography %>%
+  group_by(CityName) %>%
+  summarise(stateCount = n_distinct(State)) %>%
+  arrange(desc(stateCount))
+
+StateFreqByCity
+```
+##  Problem 11.5.3
+```{r}
+CityPop <- 
+  ZipGeography %>%
+  na.omit() %>%
+  group_by(State, CityName) %>%
+  summarise(cityPop = sum(Population)) 
+StatePop <- 
+  ZipGeography %>%
+  na.omit() %>%
+  group_by(State) %>%
+  summarise(statePop = sum(Population))  
+
+BigCities <- 
+  CityPop %>%
+  inner_join(StatePop, by = c("State" = "State")) %>%
+  mutate(statePopPerc = round(cityPop / statePop * 100, 2)) %>%
+  filter(statePopPerc > 5)
+
+
+StateFreqByCity %>%
+  inner_join(BigCities, by = c("CityName")) %>%
+  select(CityName, stateCount) %>%
+  arrange(desc(stateCount))
+```
+##  Problem 11.5.4
+```{r}
+ZipGeography %>%
+  na.omit() %>%
+  group_by(State) %>%
+  summarise(timezoneCount = n_distinct(Timezone)) %>%  # timezones per state
+  arrange(desc(timezoneCount))
+```
+
+
+
+
+
+
+
+
