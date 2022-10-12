@@ -1,5 +1,5 @@
 ---
-title: "YuanChen_DC11"
+title: "DC11"
 author: "Yuan Chen"
 date: '2022-10-11'
 output: html_document
@@ -29,12 +29,6 @@ library(ggplot2)
 
 
 ```{r}
-Crowded <- 
-  ZipCombined %>%
-  filter(Population > 50000) 
-
-# esquisser(Crowded)
-
 Crowded %>%
  filter(!(State %in% "")) %>%
  ggplot() +
@@ -129,11 +123,3 @@ ZipGeography %>%
   summarise(timezoneCount = n_distinct(Timezone)) %>%  # timezones per state
   arrange(desc(timezoneCount))
 ```
-
-
-
-
-
-
-
-
