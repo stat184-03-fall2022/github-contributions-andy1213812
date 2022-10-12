@@ -25,10 +25,18 @@ It is cannot be combined by copy pasting, This is because there is no column whi
 library(tidyverse)
 library(dcData)
 library(ggplot2)
+data("ZipDemography", package = "dcData")
+data("ZipGeography", package = "dcData")
+ZipCombined <- 
+  ZipGeography %>%
+  left_join(ZipDemography, by = c("ZIP" = "ZIP"))
 ```
 
 
 ```{r}
+Crowded <- 
+  ZipCombined %>%
+  filter(Population > 50000) 
 Crowded %>%
  filter(!(State %in% "")) %>%
  ggplot() +
