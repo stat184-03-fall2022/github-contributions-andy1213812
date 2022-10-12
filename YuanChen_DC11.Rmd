@@ -25,6 +25,7 @@ It is cannot be combined by copy pasting, This is because there is no column whi
 library(tidyverse)
 library(dcData)
 library(ggplot2)
+library(mosaic)
 data("ZipDemography", package = "dcData")
 data("ZipGeography", package = "dcData")
 ZipCombined <- 
