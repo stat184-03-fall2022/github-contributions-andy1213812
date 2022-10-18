@@ -1,0 +1,63 @@
+---
+title: "YuanChen_DC8"
+author: "YuanChen"
+date: '2022-10-18'
+output: html_document
+---
+
+### STAT 184 Homework Exercises
+```{r}
+library(tidyverse)
+library(dcData)
+library(ggplot2)
+library(mosaic)
+```
+##  Data Computing Chapter 8
+
+Yuan Chen
+
+##  Assign Exercises 
+
+8.1, 8.2, 8.3
+
+### Chapter 8 Exercises
+
+##  Problem 8.1
+Here are several functions from the ggplot2 graphics package used in DataComputing (in the text)
+
+Match each of the functions to the task it performs.
+
+### Construct the graphics frame
+ggplot()
+
+### Add a layer of glyphs
+geom_point(), geom_histogram(), geom_segment()
+
+### Set an axis label
+ylab()
+
+### Divide the frame into facets
+facet_wrap() and facet_grid()
+
+### Change the scale of the frame
+scale_y_log10()
+
+##  Problem 8.2
+```{r}
+frame <- CPS85 %>% 
+  ggplot(aes(x = age, y = wage)) 
+frame + geom_point(aes(color = married)) + facet_wrap(~sector) + coord_cartesian(xlim = c(20, 65), ylim = c(0,30))
+```
+
+
+##  Problem 8.3
+```{r}
+frame <- CPS85 %>%
+  ggplot(aes(x = age, y = wage))
+frame + geom_point(aes(color = married)) + facet_grid(sex~married) + coord_cartesian(xlim = c(15, 65), ylim = c(0, 45))
+```
+
+
+
+
+
