@@ -1,0 +1,30 @@
+---
+title: "YuanChen_DC12"
+author: "YuanChen"
+date: '2022-10-25'
+output: html_document
+---
+### STAT 184 Homework Exercises
+
+##  Data Computing Chapter 12
+
+Yuan Chen
+
+##  Assign Exercises 
+
+12.2 12.3
+
+##  Problem 12.2
+#### 1. In version 1 it means how many baby are born under different names and different genders 
+#### In version 2 it means how many baby are born under different year and sex for different names 
+#### In version 3 it means how many baby are born in year 1912 and 2012 for different name and sex 
+
+#### 2. we should use group by to group the same name inside the table and same sex also version 2 is wider because it is more detailed about different sex
+#### 3. we should put the key inside the table not use it as a key, so I think version 1 is more wider since it has more information about the year
+#### 4. it is more easier to use the version 3, because the year and name are sorted so we can just easily divide them.
+#### 5. By using the table 1, I can not just use it to divide, becasue some of them doesn't have female so in version 2 and 3 is different becasue they use it as N/A so it is easy to know that under that name there is no babies.
+
+## Problem 12.3
+#### 1. A is more wider, B is more wider, A is more wider
+#### 2. B is more easier to find becasue I can just use the chain to take the year out from the table 
+#### 3. The version B will be the one that can put ContinentData inside of the table, becasue the country are sorted and we don't need to put that much data.
