@@ -1,0 +1,69 @@
+---
+title: "YuanChen_DC13&16"
+author: "Yuan Chen"
+date: '2022-11-01'
+output: html_document
+---
+### STAT 184 Homework Exercises
+
+##  Data Computing Chapter 13&16
+
+Yuan Chen
+
+##  Assign Exercises 
+
+13.1, 13.2 16.1, 16.2
+```{r}
+library(dplyr)
+library(babynames)
+library(ggplot2)
+library(dygraphs)
+```
+
+# Question 13.1 
+```{r}
+babynames %>%
+  group_by(year) %>%
+  top_n(1, number)
+```
+
+# Question 13.2
+```{r}
+
+```
+
+# Question 16.1
+```{r}
+lubridate::mdy("April 21, 2003")-
+  lubridate::mdy("April 30, 1777")
+
+lubridate::mdy("April 21, 2003")-
+  lubridate::mdy("06-23-1912")
+
+lubridate::mdy("April 21, 2003")-
+  lubridate::dmy("3 March 1847")
+
+lubridate::mdy_hm("April 21, 2003 at 4:00pm")-
+  lubridate::mdy_hm("Nov. 11th, 1918 at 11:00 am")
+
+lubridate::mdy("April 21, 2003")-
+  lubridate::mdy("July 20, 1969")
+```
+# Question 16.2
+
+```{r}
+readr::parse_number("42,659.30")
+readr::parse_number("17%")
+readr::parse_number("£100")
+readr::parse_number("9.8 m/seconds-square")
+readr::parse_number("9.8 m/s^2")
+
+```
+
+
+
+
+
+
+
+
