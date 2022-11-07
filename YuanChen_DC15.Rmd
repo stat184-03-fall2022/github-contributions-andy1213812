@@ -1,0 +1,44 @@
+---
+title: "YuanChen_DC15"
+author: "Yuan Chen"
+date: '2022-11-07'
+output: html_document
+---
+### STAT 184 Homework Exercises
+
+##  Data Computing Chapter 15
+```{r}
+library(dplyr)
+library(ggplot2)
+library(dygraphs)
+library(ggplot2)
+library(mosaicData)
+```
+
+# Question 15.1
+```{r}
+ggplot(CPS85, aes(x = sex, y = wage, group = sex))+ 
+  geom_boxplot(aes(color = sex, fill = sex), alpha = 0.75, outlier.colour = "black") +
+   xlab("sex") + 
+  ylab( "wage")
+```
+
+# Question 15.3
+```{r}
+ggplot(CPS85,mapping = aes(x = educ,y = wage, color = sex)) +
+   stat_smooth(method = lm) +
+  geom_point(alpha = .5,
+             size = 2)  +
+  geom_smooth(se = FALSE, size = 2)
+
+```
+
+
+# Question 15.5
+1.Yes, the fracton is going from up to down, so we can say high elderly populations tend to have high child populations. 
+
+2.The regression line is not parallel to the x-axis, we can't say that the data is consistent with the fact that there is no relationship between elderly population and child population.
+
+
+
+
