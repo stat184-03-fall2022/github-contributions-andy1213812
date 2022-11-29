@@ -1,0 +1,21 @@
+---
+title: "YuanChen_DC18"
+author: "Yuan Chen"
+date: '2022-11-29'
+output: html_document
+---
+### STAT 184 Homework Exercises
+
+##  Data Computing Chapter 18
+
+####  Yuan Chen
+
+##  Assign Exercises 
+
+####  18.1 and 18.2
+
+## 18.1
+#### 1. The variables in the model are living area, number of bathroom,number of bedroom and number of fireplace.
+#### 2. No, for houses with living area less than 1080 sq ft number of bathroom doesn't make a difference in price.
+#### 3. For houses with living area between 1080 and 1483 sq ft. The typical price difference between houses with one and half bathroom and 2 bathroom is 47394.657.
+#### 4. Yes, having a fireplace is associated with higher house prices. Having more than one fireplace will cost you more than having one or none.More prices of house depends on the living area, number of bedroom, and number of bathrooms.Therefore Higher the number or area, higher will be the prices.
