@@ -19,3 +19,53 @@ output: html_document
 #### 2. No, for houses with living area less than 1080 sq ft number of bathroom doesn't make a difference in price.
 #### 3. For houses with living area between 1080 and 1483 sq ft. The typical price difference between houses with one and half bathroom and 2 bathroom is 47394.657.
 #### 4. Yes, having a fireplace is associated with higher house prices. Having more than one fireplace will cost you more than having one or none.More prices of house depends on the living area, number of bedroom, and number of bathrooms.Therefore Higher the number or area, higher will be the prices.
+
+## 18.2
+```{r}
+library(tidyverse)
+library(dcData)
+library(ggplot2)
+library(mosaic)
+data(NCHS)
+```
+
+#### Instead of diabetic - weight, I choose diabetic ~ age, and iy gave me higher log likelihood
+```{r}
+CompleteCases <- 
+  NCHS %>%
+  select(diabetic, weight, age, bmi, chol, smoker) %>%
+  na.omit() 
+
+CompleteCases %>% nrow()
+
+mod1 <- party::ctree(diabetic ~ age + chol, data = CompleteCases)
+```
+
+```{r}
+CompleteCases %>%
+  mutate(probability = as.numeric(predict(mod1)), 
+         likelihood = ifelse(diabetic, probability, 1-probability)) %>%
+  summarise(log_likelihood = sum(log(likelihood)))
+```
+#### plot the case 
+```{r}
+plot(mod1, type = "simple")
+```
+#### In my node 13 it has the highest chance of getting the diabetic which is 28.2% of the chance.
+#### In my node 5 it has the lowest cheance of getting the diabetic which is 0.1% of the chance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
