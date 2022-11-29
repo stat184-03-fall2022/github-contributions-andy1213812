@@ -51,7 +51,9 @@ CompleteCases %>%
 ```{r}
 plot(mod1, type = "simple")
 ```
+
 #### In my node 13 it has the highest chance of getting the diabetic which is 28.2% of the chance.
+
 #### In my node 5 it has the lowest cheance of getting the diabetic which is 0.1% of the chance.
 
 
