@@ -1,5 +1,5 @@
 ---
-title: "YuanChen_DC5 & 6"
+title: "YuanChen_DC5 and 6"
 author: "Yuan Chen"
 date: '2022-12-09'
 output: html_document
