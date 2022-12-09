@@ -62,9 +62,9 @@ ggplot(data = CPS85, aes(x = exper, y = wage)) +
 ## Chapter 6
 
 ### Problem 6.1
-#### “1433B”, “1433E”, “1433G”, “1433Z”
-#### Yes; all x-axes represent the different cell conditions and y-axes represent the amount of substance.
-#### *, vertical bars, red line segments
+ “1433B”, “1433E”, “1433G”, “1433Z”
+  Yes; all x-axes represent the different cell conditions and y-axes represent the amount of substance.
+ *, vertical bars, red line segments
 
 ### Problem 6.2
 #### Guides: y-axis tick marks, x-axis tick marks, color, fill, and sections of the x-axis concentration value corresponds to the y-position, genes correspond to x-position, molecules correspond to color, flux correspond to fill, target corresponds to placement on x-axis
