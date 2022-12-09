@@ -1,0 +1,117 @@
+---
+title: "YuanChen_DC5 & 6"
+author: "Yuan Chen"
+date: '2022-12-09'
+output: html_document
+---
+
+## Assigned Exercises
+
+- DC Chapter 5 Exercises:   5.2/5.3
+- DC Chapter 6 Exercises:   6.1/6.3/6.5/6.6/6.7/6.8/6.9
+
+## Load Required Packages
+
+```{r}
+rm(list = ls())
+
+library(mosaicData)
+library(mosaic)
+library(tidyverse)
+library(dcData)
+```
+
+## Chapter 5 Exercises
+
+### Problem 5.1
+```{r}
+data("CPS85")
+ggplot(data = CPS85, aes(x = sex, y = wage)) + 
+  geom_boxplot()  + 
+  aes(colour = married) + 
+  facet_wrap(~race, ncol = 4) + 
+  theme(legend.position = "right") + 
+  labs(title = "")
+```
+
+### Problem 5.2
+```{r}
+data("NCHS")
+ggplot( data = NCHS, aes(x = bmi)) + 
+  geom_density(adjust = 0.83) + 
+  aes(colour = sex) + 
+  facet_wrap(~pregnant, ncol = 4) + 
+  labs(title = "") + 
+  theme(legend.position = "right") 
+
+```
+
+### Probelm 5.3
+
+```{r}
+ggplot(data = CPS85, aes(x = exper, y = wage)) +
+  geom_point() + 
+  aes(colour = married) +
+  facet_wrap( ~ sector, ncol = 4) +
+  scale_x_log10() +
+  scale_y_log10() +
+  theme_bw()
+```
+
+
+## Chapter 6
+
+### Problem 6.1
+#### “1433B”, “1433E”, “1433G”, “1433Z”
+#### Yes; all x-axes represent the different cell conditions and y-axes represent the amount of substance.
+#### *, vertical bars, red line segments
+
+### Problem 6.2
+#### Guides: y-axis tick marks, x-axis tick marks, color, fill, and sections of the x-axis concentration value corresponds to the y-position, genes correspond to x-position, molecules correspond to color, flux correspond to fill, target corresponds to placement on x-axis
+
+#### Graphical attributes: color, fill, location molecule corresponds to color, flux corresponds to fill, concentration, target, and gene correspond to location of the dot
+
+#### gene (x-axis) and concentration (y-axis)
+
+#### gene and target
+
+### Problem 6.3
+Glyph 1: vertical bar with labeled dot, corresponds to ‘protein’ and its low/center/high properties
+Glyph 2: stars, correspond to ‘signif’
+Horizontal: defined by protein
+Vertical: defined by low/center/high
+Yes
+Guides: y-axis tick marks, glyph labels, blue label saying “polarity proteins”
+
+### Problem 6.4
+Rectangle defined by time of day and different transportation routes
+Solid lines, dashed lines, and dotted lines
+Shape/Style: Solid lines are time on public transport, dashed lines are time between transfers, dotted lines are (most likely) walking time
+Position: Time and route
+Time of day, total travel time, type of transportation
+
+### Problem 6.5
+b: State (vertical axis) and Polling Organization (horizontal axis).
+
+### Problem 6.6
+d: Glyph: Rectangle. Graphical attribute: color and text.
+
+### Problem 6.7
+d: NYT poll probability for the Democratic candidate
+
+### Problem 6.8
+a: Vertical scale: name of state. e: Color: color band
+
+### Problem 6.9
+```{r}
+Small <-
+  NCHS %>%
+  sample_n(size = 5000)
+gf_point(weight ~ bmi, data = Small, color = ~ smoker) %>% 
+  gf_theme(legend.position = "right") %>% 
+  gf_labs(title = "", caption = "")
+```
+### Problem 6.10
+Inner layer: Classification tree structure Outer layer: Colored bands
+Inner scale: Division of space corresponding to the grouping of organisms Outer scale: Color corresponding to the type of molecule
+
